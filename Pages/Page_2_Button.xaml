@@ -1,0 +1,301 @@
+﻿<Page x:Class="EVO_MOTION_D6X8.Page_2_Button"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:EVO_MOTION_D6X8"
+      xmlns:btnTags="clr-namespace:Button_Tags"
+      mc:Ignorable="d" 
+      Title="Page_2_Button" Width="750" Height="560" Loaded="Page_Loaded">
+
+    <Grid Background="{StaticResource Background_1}">
+
+
+        <Border Background="{StaticResource Background_2}" 
+                CornerRadius="5"
+                HorizontalAlignment="Left" 
+                VerticalAlignment="Top"
+                Margin="15,20,0,0"
+                Width="250" Grid.ColumnSpan="2">
+            <DockPanel>
+                <ComboBox Style="{DynamicResource ComboBoxStyle1}" 
+                          x:Name="cmb_MacroButtonName_"
+                          Foreground="Black"
+                          DockPanel.Dock="Top"
+                          FontSize="22"
+                          Margin="10,10,10,0"
+                          VerticalAlignment="Top"
+                          IsReadOnly="True">
+
+                    <ComboBox Style="{DynamicResource ComboBoxStyle1}" 
+                              x:Name="cmb_MacroButtonName"
+                              Foreground="Black"
+                              DockPanel.Dock="Top"
+                              FontSize="22"
+                              VerticalAlignment="Top"
+                              IsReadOnly="True" 
+                              Width="228" 
+                              SelectionChanged="cmb_MacroButtonName_SelectionChanged"/>
+                    <ComboBox Style="{DynamicResource ComboBoxStyle1}" 
+                              x:Name="cmb_NavMovement"
+                              Foreground="Black"
+                              DockPanel.Dock="Top"
+                              FontSize="22"
+                              VerticalAlignment="Top"
+                              IsReadOnly="True" 
+                              Width="228" 
+                              SelectionChanged="cmb_NavMovement_SelectionChanged"
+                              Visibility="Visible"/>
+
+                </ComboBox>
+
+                <ComboBox Style="{DynamicResource ComboBoxStyle1}" 
+                          x:Name="cmb_Predfined_Custom_Shortcut"
+                          Foreground="Black"
+                          DockPanel.Dock="Top"
+                          FontSize="22"
+                          Margin="10,10,10,0"
+                          VerticalAlignment="Top"
+                          IsReadOnly="True" SelectionChanged="cmb_Predfined_Custom_Shortcut_SelectionChanged">
+                    <ComboBoxItem Content="Predefined Shortcut"/>
+                    <ComboBoxItem Content="Custom Shortcut"/>
+
+                </ComboBox>
+
+                <ComboBox Style="{DynamicResource ComboBoxStyle1}" 
+                          x:Name="cmb_Predfined_Shortcut"
+                          Foreground="Black"
+                          DockPanel.Dock="Top"
+                          FontSize="22"
+                          Margin="10,10,10,5"
+                          VerticalAlignment="Top"
+                          IsReadOnly="True" SelectionChanged="cmb_Predfined_Shortcut_SelectionChanged">
+                    <ComboBoxItem Content="Windows Shortcut"/>
+                    <ComboBoxItem Content="Solidworks Shortcut"/>
+                    <ComboBoxItem Content="Catia Shortcut"/>
+                </ComboBox>
+
+                <ComboBox Style="{DynamicResource ComboBoxStyle1}" 
+                          x:Name="cmb_Predefined_Shortcut_List"
+                          Foreground="Black"
+                          DockPanel.Dock="Top"
+                          FontSize="22"
+                          Margin="10,10,10,5"
+                          VerticalAlignment="Top"
+                          IsReadOnly="True">
+                </ComboBox>
+
+                <DockPanel DockPanel.Dock="Top"
+                           x:Name="dck_button_shortcut_text"
+                           Margin="10,5,10,0">
+                    <Button Style="{StaticResource Button_Generic}" 
+                            x:Name="btn_setmacroShortcut"
+                            Content="Shortcut" 
+                            FontSize="15"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Center"
+                            Margin="0,0,0,0"
+                            Width="100"  
+                            Click="btn_setmacroShortcut_Click"/>
+
+                    <Button Style="{StaticResource Button_Generic}" 
+                            x:Name="btn_setmacroPrintText" 
+                            Content="Text" 
+                            FontSize="15"
+                            VerticalAlignment="Center" 
+                            HorizontalAlignment="Right"
+                            Margin="0,0,0,0"
+                            Width="100" 
+
+                            Click="btn_setmacroPrintText_Click"/>
+                </DockPanel>
+
+                <StackPanel x:Name="stckp_shortcut" 
+                            Orientation="Vertical"
+                            DockPanel.Dock="Top"
+                            VerticalAlignment="Top"
+                            Margin="0,5,0,0">
+                    <ComboBox Style="{StaticResource ComboBoxStyle1}" 
+                              x:Name="cmb_shortcut_val1" 
+                              VerticalAlignment="Top"
+                              FontSize="22"
+                              Margin="10,0,10,0"
+                              Foreground="Black">
+                    </ComboBox>
+
+                    <ComboBox Style="{StaticResource ComboBoxStyle1}"
+                              x:Name="cmb_shortcut_val2" 
+                              Margin="10,5,10,0"
+                              VerticalAlignment="Top"
+                              FontSize="22"
+                              Foreground="Black"/>
+
+                    <ComboBox Style="{StaticResource ComboBoxStyle1}"
+                              x:Name="cmb_shortcut_val3"
+                              Margin="10,5,10,0" 
+                              VerticalAlignment="Top"
+                              FontSize="22"
+                              Foreground="Black"/>
+
+                </StackPanel>
+
+
+                <TextBox x:Name="txt_macroPrintText" 
+                         Background="{StaticResource ButtonFont}"
+                         BorderBrush="{StaticResource ButtonFont}"
+                         DockPanel.Dock="Top"
+                         Foreground="Black"
+                         Margin="10,5,10,0"
+                         TextWrapping="Wrap" 
+                         Text="" 
+                         VerticalAlignment="Top" 
+                         HorizontalAlignment="Stretch"
+                         Height="116" 
+                         VerticalScrollBarVisibility="Auto" 
+                         MaxLength="50" 
+                         AcceptsReturn="True" 
+                         AcceptsTab="True" 
+                         MaxLines="20">
+                    <TextBox.ToolTip>
+                        <ToolTip>
+                            Only using UTF8 character
+                        </ToolTip>
+                    </TextBox.ToolTip>
+                </TextBox>
+
+
+
+                <Button Style="{StaticResource Button_Generic}" 
+                        x:Name="btn_MacroSet"
+                        Content="SET" 
+                        FontSize="22"
+                        VerticalAlignment="Top" 
+                        VerticalContentAlignment="Center"
+                        Margin="10,5,10,10" 
+                        DockPanel.Dock="Top" 
+                        Click="btn_MacroSet_Click"/>
+
+            </DockPanel>
+
+        </Border>
+
+        <Border Background="{StaticResource Background_2}" 
+                CornerRadius="5"
+                HorizontalAlignment="Left" 
+                VerticalAlignment="Top"
+                Margin="280,50,0,20" Grid.Column="1">
+            <DockPanel>
+                
+                <ListBox x:Name="lst_macroKeyValues" 
+                         FontSize="19"
+                         Background="LightGray"
+                         Foreground="{DynamicResource Paragraph}"
+                         ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                         DockPanel.Dock="Top"
+                         HorizontalAlignment="Left" 
+                         VerticalAlignment="Top" 
+                         Margin="10,10,10,10" 
+                         Width="400" 
+                         Focusable="False" 
+                         IsTextSearchEnabled="False" 
+                         ScrollViewer.VerticalScrollBarVisibility="Visible" 
+                         IsEnabled="True" 
+                         Height="250">
+                        
+                            <ListBoxItem x:Name="MK1Content" Content="MK1:"/>
+                            <ListBoxItem x:Name="MK2Content" Content="MK2:"/>
+                            <ListBoxItem x:Name="MK3Content" Content="MK3:"/>
+                            <ListBoxItem x:Name="MK4Content" Content="MK4:"/>
+                            <ListBoxItem x:Name="MK5Content" Content="MK5:"/>
+                            <ListBoxItem x:Name="MK6Content" Content="MK6:"/>
+                            <ListBoxItem x:Name="MK7Content" Content="MK7:"/>
+                            <ListBoxItem x:Name="MK8Content" Content="MK8:"/>
+                        
+                </ListBox>
+                
+                <ListBox x:Name="lst_navasbutton" 
+                         FontSize="19"
+                         Background="LightGray"
+                         Foreground="{DynamicResource Paragraph}"
+                         ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                         DockPanel.Dock="Bottom"
+                         Margin="10,10,10,10" 
+                         Width="400" 
+                         Focusable="False" 
+                         IsTextSearchEnabled="False" 
+                         ScrollViewer.VerticalScrollBarVisibility="Visible" 
+                         IsEnabled="True" 
+                         Height="180">
+                        
+                            <ListBoxItem x:Name="PitchDownContent" Content="Pitch Down:"/>
+                            <ListBoxItem x:Name="PitchUpContent" Content="Pitch Up:"/>
+                            <ListBoxItem x:Name="RollRightContent" Content="Roll Right:"/>
+                            <ListBoxItem x:Name="RollLeftContent" Content="Roll Left:"/>
+                            <ListBoxItem x:Name="YawCWContent" Content="Yaw CW:"/>
+                            <ListBoxItem x:Name="YawCCWContent" Content="Yaw CCW:"/>
+                            <ListBoxItem x:Name="TransXPosContent" Content="Trans X Pos:"/>
+                            <ListBoxItem x:Name="TransXNegContent" Content="Trans X Neg:"/>
+                            <ListBoxItem x:Name="TransYPosContent" Content="Trans Y Pos:"/>
+                            <ListBoxItem x:Name="TransYNegContent" Content="Trans Y Neg:"/>
+                            <ListBoxItem x:Name="TransZPosContent" Content="Trans Z Pos:"/>
+                            <ListBoxItem x:Name="TransZNegContent" Content="Trans Z Neg:"/>
+                </ListBox>
+            </DockPanel>
+
+        </Border>
+
+        <ToggleButton x:Name="btn_NavigationasButton" 
+                      Style="{StaticResource IconContent_Button_Toggle}"
+                      Content="Navigation as Button"
+                      FontSize="14"
+                      btnTags:IconProperties.Tag="{StaticResource circle}"
+                      btnTags:IconProperties.TagIconHeight="15"
+                      btnTags:IconProperties.TagIconWidth="15"
+                      btnTags:IconProperties.TagFill="{StaticResource Paragraph}"
+                      btnTags:IconProperties.TagStroke="Transparent"
+                      btnTags:IconProperties.TagStrokeThickenss="0"
+                      
+                      btnTags:IconProperties.TagOnMouseOver="{StaticResource circle}"
+                      btnTags:IconProperties.TagFillMouseOver="Transparent"
+                      btnTags:IconProperties.TagStrokeMouseOver="{StaticResource Paragraph}"
+                      btnTags:IconProperties.TagStrokeThicknessMouseOver="3"
+                      
+                      btnTags:IconProperties.TagOnPressed="{StaticResource circle}"
+                      btnTags:IconProperties.TagFillMousePressed="{StaticResource Paragraph}"
+                      btnTags:IconProperties.TagStrokeMousePressed="Transparent"
+                      btnTags:IconProperties.TagStrokeThicknessMousePressed="0"
+                      
+                      HorizontalAlignment="Left"
+                      VerticalAlignment="Top" 
+                      Margin="280,20,0,0" Click="btn_NavigationasButton_Click"/>
+
+        <Border BorderBrush="Transparent" 
+                BorderThickness="0"
+                Background="{StaticResource Background_2}"
+                CornerRadius="5"
+                Margin="20,0,0,40"
+                Width="250" 
+                Height="250" 
+                HorizontalAlignment="Left" 
+                VerticalAlignment="Bottom"
+                Visibility="Hidden" Grid.ColumnSpan="2">
+
+            <DockPanel>
+                <Image DockPanel.Dock="Top"
+                       Width="230"
+                       Height="180" 
+                       Margin="0,10,0,0">
+                </Image>
+                <Button Style="{StaticResource Button_Generic}"
+                        Margin="10,15,10,5"
+                        Height="40"
+                        Content="Select"
+                        FontFamily="Segoe UI"
+                        FontSize="20">
+
+                </Button>
+            </DockPanel>
+        </Border>
+
+    </Grid>
+</Page>

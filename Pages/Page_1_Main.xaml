@@ -1,0 +1,597 @@
+﻿<Page x:Class="EVO_MOTION_D6X8.Page_1_Main"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:EVO_MOTION_D6X8"
+       xmlns:btnTags="clr-namespace:Button_Tags"
+      mc:Ignorable="d" 
+      Title="Page_1_Main" Width="750" Height="560" 
+      Loaded="Page_Loaded">
+
+    <Grid Background="{StaticResource Background_1}" 
+          HorizontalAlignment="Stretch">
+
+        <ToggleButton x:Name="btn_NavigationasButton_1" 
+                      Style="{StaticResource IconContent_Button_Toggle}"
+                      Content="Navigation as Button"
+                      FontSize="14"
+                      btnTags:IconProperties.Tag="{StaticResource circle}"
+                      btnTags:IconProperties.TagIconHeight="15"
+                      btnTags:IconProperties.TagIconWidth="15"
+                      btnTags:IconProperties.TagFill="{StaticResource Paragraph}"
+                      btnTags:IconProperties.TagStroke="Transparent"
+                      btnTags:IconProperties.TagStrokeThickenss="0"
+                      
+                      btnTags:IconProperties.TagOnMouseOver="{StaticResource circle}"
+                      btnTags:IconProperties.TagFillMouseOver="Transparent"
+                      btnTags:IconProperties.TagStrokeMouseOver="{StaticResource Paragraph}"
+                      btnTags:IconProperties.TagStrokeThicknessMouseOver="3"
+                      
+                      btnTags:IconProperties.TagOnPressed="{StaticResource circle}"
+                      btnTags:IconProperties.TagFillMousePressed="{StaticResource Paragraph}"
+                      btnTags:IconProperties.TagStrokeMousePressed="Transparent"
+                      btnTags:IconProperties.TagStrokeThicknessMousePressed="0"
+                      
+                      HorizontalAlignment="Left"
+                      VerticalAlignment="Top" 
+                      Margin="15,185,0,0" 
+                      IsEnabled="False" />
+        
+        <StackPanel x:Name="Timer_Panel" 
+                    Orientation="Horizontal"  
+                    Background="Transparent" 
+                    VerticalAlignment="Bottom" 
+                    HorizontalAlignment="Left" 
+                    Margin="15,0,0,15">
+            <Border Background="{StaticResource Background_2}" CornerRadius="5">
+                <StackPanel Orientation="Vertical">
+                    <DockPanel>
+                        <Label x:Name="lbl_timer" 
+                               FontFamily="/Fonts/#Digital-7" 
+                               FontSize="25"
+                               Height="36"
+                               Content="00:00:00" 
+                               Margin="0,2,0,0"
+                               VerticalAlignment="Center"  
+                               Foreground="{StaticResource ButtonFont}" 
+                               VerticalContentAlignment="Center"
+                               HorizontalContentAlignment="Center"/>
+
+                    </DockPanel>
+
+                    <StackPanel Orientation="Horizontal">
+
+                        <ToggleButton x:Name="btn_timer_start" 
+                                      Style="{StaticResource Icon_Button_toggle}"
+                                      
+                                      btnTags:IconProperties.TagIconHeight="25"
+                                      btnTags:IconProperties.TagIconWidth="25"
+                                      
+                                      btnTags:IconProperties.Tag="{StaticResource start}"
+                                      btnTags:IconProperties.TagFill="{StaticResource Button_Background_1}"
+                                      btnTags:IconProperties.TagStroke="Transparent"
+                                      btnTags:IconProperties.TagStrokeThickenss="0"
+                                   
+                                      btnTags:IconProperties.TagOnMouseOver="{StaticResource start}"
+                                      btnTags:IconProperties.TagFillMouseOver="{StaticResource Button_Background_1}"
+                                      btnTags:IconProperties.TagStrokeMouseOver="Transparent"
+                                      btnTags:IconProperties.TagStrokeThicknessMouseOver="3"
+                                   
+                                      btnTags:IconProperties.TagOnPressed="{StaticResource pause}"
+                                      btnTags:IconProperties.TagFillMousePressed="{StaticResource Button_Background_1}"
+                                      btnTags:IconProperties.TagStrokeMousePressed="Transparent"
+                                      btnTags:IconProperties.TagStrokeThicknessMousePressed="0"
+                                      
+                                      Margin="5,0,5,3"
+                                      
+                                      Checked="btn_toggleStartTimer_Checked"
+                                      Unchecked="btn_toggleStartTimer_Unchecked" />
+
+                        <Button x:Name="btn_timer_stop" 
+                                Style="{StaticResource Icon_Button}"
+                                VerticalAlignment="Stretch"
+                                btnTags:IconProperties.TagIconHeight="25"
+                                btnTags:IconProperties.TagIconWidth="25"
+                                btnTags:IconProperties.Tag="{StaticResource stop}"
+                                btnTags:IconProperties.TagFill="{StaticResource Button_Background_1}"
+                                btnTags:IconProperties.TagStroke="Transparent"
+                                btnTags:IconProperties.TagStrokeThickenss="0"
+                               
+                                btnTags:IconProperties.TagOnMouseOver="{StaticResource stop}"
+                                btnTags:IconProperties.TagFillMouseOver="{StaticResource Button_Background_1}"
+                                btnTags:IconProperties.TagStrokeMouseOver="Transparent"
+                                btnTags:IconProperties.TagStrokeThicknessMouseOver="3"
+                               
+                                btnTags:IconProperties.TagOnPressed="{StaticResource restart}"
+                                btnTags:IconProperties.TagFillMousePressed="{StaticResource Button_Background_1}"
+                                btnTags:IconProperties.TagStrokeMousePressed="Transparent"
+                                btnTags:IconProperties.TagStrokeThicknessMousePressed="0" 
+                                
+                                Margin="0,0,0,3" 
+                                
+                                Click="btn_timer_stop_Click"/>
+
+                        <Button x:Name="btn_timer_restart" 
+                                Style="{StaticResource Icon_Button}"
+                                VerticalAlignment="Stretch"
+                                Height="30"
+                                
+                                btnTags:IconProperties.TagIconHeight="25"
+                                btnTags:IconProperties.TagIconWidth="25"
+                                
+                                btnTags:IconProperties.Tag="{StaticResource restart}"
+                                btnTags:IconProperties.TagFill="{StaticResource Button_Background_1}"
+                                btnTags:IconProperties.TagStroke="Transparent"
+                                btnTags:IconProperties.TagStrokeThickenss="0"
+                               
+                                btnTags:IconProperties.TagOnMouseOver="{StaticResource restart}"
+                                btnTags:IconProperties.TagFillMouseOver="{StaticResource Button_Background_1}"
+                                btnTags:IconProperties.TagStrokeMouseOver="Transparent"
+                                btnTags:IconProperties.TagStrokeThicknessMouseOver="3"
+                               
+                                btnTags:IconProperties.TagOnPressed="{StaticResource restart}"
+                                btnTags:IconProperties.TagFillMousePressed="{StaticResource Button_Background_1}"
+                                btnTags:IconProperties.TagStrokeMousePressed="Transparent"
+                                btnTags:IconProperties.TagStrokeThicknessMousePressed="0" 
+                                
+                                Margin="5,0,5,3"
+                                Click="btn_timer_restart_Click"/>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+        </StackPanel>
+
+        <StackPanel x:Name="Device_Mode_Panel" 
+                    HorizontalAlignment="Left" 
+                    VerticalAlignment="Top" 
+                    Width="250" 
+                    Orientation="Vertical" 
+                    Margin="15,15,0,0" 
+                    Background="Transparent">
+
+            <Border Background="{StaticResource Background_2}" CornerRadius="5">
+                <StackPanel Orientation="Vertical">
+                    <Label x:Name="label" 
+                           Content="Device Mode" 
+                           HorizontalAlignment="Stretch"  
+                           HorizontalContentAlignment="Center"
+                           VerticalContentAlignment="Center"
+                           Margin="0,10,0,10" 
+                           Foreground="{StaticResource HeadLine}" 
+                           FontSize="22"
+                           FontFamily="Segoe UI" 
+                           FontWeight="Bold"/>
+
+                    <ComboBox Style="{StaticResource ComboBoxStyle1}" 
+                              x:Name="cmb_deviceMode" 
+                              HorizontalAlignment="Stretch" 
+                              Foreground="Black"
+                              VerticalAlignment="Top" 
+                              Margin="10,0,10,10" 
+                              SelectionChanged="cmb_deviceMode_SelectionChanged"
+                              FontSize="22"
+                              SelectedValuePath="Content">
+                        <ComboBoxItem Content="Select Device Mode"/>
+                        <ComboBoxItem Content="SpaceNav"/>
+                        <ComboBoxItem Content="Mode1"/>
+                        <ComboBoxItem Content="Mode2"/>
+                        <ComboBoxItem Content="Mouse"/>
+
+
+                    </ComboBox>
+
+                    <ComboBox Style="{StaticResource ComboBoxStyle1}" 
+                              x:Name="cmb_spaceNavProgram" 
+                              Foreground="Black"
+                              HorizontalAlignment="Stretch" 
+                              Margin="10,10,10,10" 
+                              FontSize="22"
+                              SelectedValuePath="Content" SelectionChanged="cmb_spaceNavProgram_SelectionChanged">
+                        <ComboBoxItem Content="Select CAD Software"/>
+                        <ComboBoxItem Content="Solidworks"/>
+                        <ComboBoxItem Content="Catia"/>
+
+                    </ComboBox>
+                </StackPanel>
+
+            </Border>
+
+        </StackPanel>
+
+        <Canvas x:Name="SpaceNavImage"
+                Width="250"
+                Height="250" 
+                HorizontalAlignment="Left" 
+                VerticalAlignment="Top"
+                Margin="15,200,0,0">
+            <Canvas.Background>
+                <ImageBrush ImageSource="/pictures/colorwhell/colorwhell.png" Stretch="Uniform"/>
+            </Canvas.Background>
+        </Canvas>
+
+        <StackPanel x:Name="Temperature_Panel" 
+                    Background="Transparent"
+                    Margin="0,0,15,15"
+                    HorizontalAlignment="Right" 
+                    VerticalAlignment="Bottom" 
+                    Orientation="Vertical">
+            <Border Background="{StaticResource Background_2}" 
+                    CornerRadius="5">
+                <StackPanel Orientation="Vertical">
+
+                    <Label x:Name="lbl_temperature" 
+                           Content="Temperature" 
+                           HorizontalAlignment="Stretch" 
+                           HorizontalContentAlignment="Center"
+                           Height="29"
+                           Margin="5,4,5,5" 
+                           Foreground="{StaticResource ButtonFont}"
+                           FontFamily="Segoe UI"
+                           FontSize="14"/>
+
+                    <Label x:Name="lbl_tempretaureValue" 
+                           Content="Temp Value" 
+                           HorizontalAlignment="Stretch"  
+                           HorizontalContentAlignment="Center"
+                           Margin="0,0,0,4" 
+                           Height="29"
+                           Foreground="#FF5357BD"
+                           FontFamily="Segoe UI"
+                           FontSize="13"/>
+                </StackPanel>
+            </Border>
+
+        </StackPanel>
+
+        <StackPanel x:Name="User_Profile_Panel" 
+                    HorizontalAlignment="Right" 
+                    VerticalAlignment="Top" 
+                    Width="180" 
+                    Orientation="Vertical" 
+                    Margin="0,15,15,0" 
+                    Background="Transparent">
+            <Border Background="{StaticResource Background_2}"
+                    CornerRadius="5">
+                <StackPanel Orientation="vertical">
+                    <StackPanel Orientation="Horizontal"
+                                HorizontalAlignment="Stretch"
+                                Margin="0,0,0,5">
+                        <Label Content="User Profile:"
+                               Foreground="{StaticResource HeadLine}"
+                               HorizontalAlignment="Left"
+                               HorizontalContentAlignment="Right"
+                               FontFamily="Segoe UI"
+                               FontSize="12"
+                               FontWeight="Bold"
+                               Width="80"/>
+
+                        <Label x:Name="lbl_UserProfile"
+                               Foreground="{StaticResource ButtonFont}"
+                               HorizontalContentAlignment="Left"
+                               FontFamily="Segoe UI"
+                               FontSize="12"
+                               Content="" 
+                               Width="100"/>
+
+                    </StackPanel>
+                    <DockPanel HorizontalAlignment="Center"
+                               Margin="0,0,0,5">
+                        <Button Style="{StaticResource Button_Generic}"
+                                x:Name="btn_Save"
+                                HorizontalContentAlignment="Center"
+                                DockPanel.Dock="Left"
+                                Content="Save"
+                                Margin="5,0,5,0"
+                                FontSize="12"
+                                Width="80" 
+                                Click="btn_Save_Click"/>
+
+                        <Button x:Name="btn_Load" Style="{StaticResource Button_Generic}"
+                                HorizontalContentAlignment="Center"
+                                DockPanel.Dock="Right"
+                                Content="Load"
+                                Margin="0,0,5,0"
+                                FontSize="12"
+                                Width="80" Click="btn_Load_Click"/>
+
+
+                    </DockPanel>
+
+                </StackPanel>
+
+            </Border>
+        </StackPanel>
+
+        <StackPanel  Margin="0,100,15,2" VerticalAlignment="Top" HorizontalAlignment="Right" Visibility="Visible">
+            <Border  Background="{StaticResource Background_2}" CornerRadius="5">
+                <StackPanel Orientation="Horizontal">
+                    <StackPanel Orientation="Vertical">
+                        <StackPanel Orientation="Horizontal">
+                            <Label x:Name="Tilt_Raw_" 
+                               Content="Tilt Raw:" 
+                               HorizontalAlignment="Left" 
+                               HorizontalContentAlignment="Right"
+                               Height="24"
+                               Width="50"
+                               Margin="1,-3,0,-3" 
+                               Foreground="{StaticResource ButtonFont}"
+                               FontFamily="Segoe UI"
+                               FontSize="10"/>
+
+                            <Label x:Name="Tilt_Raw" 
+                               Content="0" 
+                               HorizontalAlignment="Left" 
+                               HorizontalContentAlignment="Left"
+                               Height="24"
+                               Width="50"
+                               Margin="0,-3,1,-3" 
+                               Foreground="{StaticResource ButtonFont}"
+                               FontFamily="Segoe UI"
+                               FontSize="10"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Label x:Name="Roll_Raw_" 
+                               Content="Roll Raw:" 
+                               HorizontalAlignment="Left" 
+                               HorizontalContentAlignment="Right"
+                               VerticalContentAlignment="Center"
+                               Height="24"
+                               Width="50"
+                               Margin="1,-3,0,-3" 
+                               Foreground="{StaticResource ButtonFont}"
+                               FontFamily="Segoe UI"
+                               FontSize="10"/>
+
+                            <Label x:Name="Roll_Raw" 
+                               Content="0" 
+                               HorizontalAlignment="Left" 
+                               HorizontalContentAlignment="Left"
+                               VerticalContentAlignment="Center"
+                               Height="24"
+                               Width="50"
+                               Margin="0,-3,1,-3" 
+                               Foreground="{StaticResource ButtonFont}"
+                               FontFamily="Segoe UI"
+                               FontSize="10"/>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal">
+                            <Label x:Name="Tilt_Map_" 
+                               Content="Tilt Map:"
+                               HorizontalAlignment="Left" 
+                               HorizontalContentAlignment="Right"
+                               Height="24"
+                               Width="50"
+                               Margin="1,-3,0,-3" 
+                               Foreground="{StaticResource ButtonFont}"
+                               FontFamily="Segoe UI"
+                               FontSize="10"/>
+                            <Label x:Name="Tilt_Map" 
+                               Content="0"
+                               HorizontalAlignment="Left" 
+                               HorizontalContentAlignment="Left"
+                               Height="24"
+                               Width="50"
+                               Margin="0,-3,1,-3" 
+                               Foreground="{StaticResource ButtonFont}"
+                               FontFamily="Segoe UI"
+                               FontSize="10"/>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal">
+                            <Label x:Name="Roll_Map_" 
+                               Content="Roll Map:"
+                               HorizontalAlignment="Left" 
+                               HorizontalContentAlignment="Right"
+                               Height="24"
+                               Margin="1,-3,0,-3" 
+                               Foreground="{StaticResource ButtonFont}"
+                               FontFamily="Segoe UI"
+                               FontSize="10" Width="50"/>
+                            <Label x:Name="Roll_Map" 
+                               Content="0"
+                               HorizontalAlignment="Left" 
+                               HorizontalContentAlignment="Left"
+                               Height="24"
+                               Margin="0,-3,1,-3" 
+                               Foreground="{StaticResource ButtonFont}"
+                               FontFamily="Segoe UI"
+                               FontSize="10" Width="50"/>
+
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal">
+                            <Label x:Name="Move_X_" 
+                               Content="X:"
+                               HorizontalAlignment="Left" 
+                               HorizontalContentAlignment="Right"
+                               Height="24"
+                               Margin="1,-3,0,-3" 
+                               Foreground="{StaticResource ButtonFont}"
+                               FontFamily="Segoe UI"
+                               FontSize="10" Width="50"/>
+                            <Label x:Name="Move_X" 
+                               Content="0"
+                               HorizontalAlignment="Left" 
+                               HorizontalContentAlignment="Left"
+                               Height="24"
+                               Margin="0,-3,1,-3" 
+                               Foreground="{StaticResource ButtonFont}"
+                               FontFamily="Segoe UI"
+                               FontSize="10" Width="50"/>
+
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal">
+                            <Label x:Name="Move_Y_" 
+                               Content="Y:"
+                               HorizontalAlignment="Left" 
+                               HorizontalContentAlignment="Right"
+                               Height="24"
+                               Margin="1,-3,0,-3" 
+                               Foreground="{StaticResource ButtonFont}"
+                               FontFamily="Segoe UI"
+                               FontSize="10" Width="50"/>
+                            <Label x:Name="Move_Y" 
+                               Content="0"
+                               HorizontalAlignment="Left" 
+                               HorizontalContentAlignment="Left"
+                               Height="24"
+                               Margin="0,-3,1,-3" 
+                               Foreground="{StaticResource ButtonFont}"
+                               FontFamily="Segoe UI"
+                               FontSize="10" Width="50"/>
+
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal">
+                            <Label x:Name="Turn_" 
+                               Content="Turn:"
+                               HorizontalAlignment="Left" 
+                               HorizontalContentAlignment="Right"
+                               Height="24"
+                               Margin="1,-3,0,-3" 
+                               Foreground="{StaticResource ButtonFont}"
+                               FontFamily="Segoe UI"
+                               FontSize="10" Width="50"/>
+                            <Label x:Name="Turn" 
+                               Content="0"
+                               HorizontalAlignment="Left" 
+                               HorizontalContentAlignment="Left"
+                               Height="24"
+                               Margin="0,-3,1,-3" 
+                               Foreground="{StaticResource ButtonFont}"
+                               FontFamily="Segoe UI"
+                               FontSize="10" Width="50"/>
+
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal">
+                            <Label x:Name="Hall_Sensor_1_" 
+                               Content="HS1:" 
+                               HorizontalAlignment="Left" 
+                               HorizontalContentAlignment="Right"
+                               Height="24"
+                               Width="50"
+                               Margin="1,-3,0,-3" 
+                               Foreground="{StaticResource ButtonFont}"
+                               FontFamily="Segoe UI"
+                               FontSize="10"/>
+                            <Label x:Name="Hall_Sensor_1" 
+                               Content="0" 
+                               HorizontalAlignment="Left" 
+                               HorizontalContentAlignment="Left"
+                               Height="24"
+                               Width="50"
+                               Margin="0,-3,1,-3" 
+                               Foreground="{StaticResource ButtonFont}"
+                               FontFamily="Segoe UI"
+                               FontSize="10"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Label x:Name="Hall_Sensor_2_" 
+                               Content="HS2:" 
+                               HorizontalAlignment="Left" 
+                               HorizontalContentAlignment="Right"
+                               Height="24"
+                               Width="50"
+                               Margin="1,-3,0,-3" 
+                               Foreground="{StaticResource ButtonFont}"
+                               FontFamily="Segoe UI"
+                               FontSize="10"/>
+                            <Label x:Name="Hall_Sensor_2" 
+                               Content="0" 
+                               HorizontalAlignment="Left" 
+                               HorizontalContentAlignment="Left"
+                               Height="24"
+                               Width="50"
+                               Margin="0,-3,1,-3" 
+                               Foreground="{StaticResource ButtonFont}"
+                               FontFamily="Segoe UI"
+                               FontSize="10"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Label x:Name="Hall_Sensor_3_" 
+                               Content="HS3:" 
+                               HorizontalAlignment="Left" 
+                               HorizontalContentAlignment="Right"
+                               Height="24"
+                               Width="50"
+                               Margin="1,-3,0,-3" 
+                               Foreground="{StaticResource ButtonFont}"
+                               FontFamily="Segoe UI"
+                               FontSize="10"/>
+                            <Label x:Name="Hall_Sensor_3" 
+                               Content="0" 
+                               HorizontalAlignment="Left" 
+                               HorizontalContentAlignment="Left"
+                               Height="24"
+                               Width="50"
+                               Margin="0,-3,1,-3" 
+                               Foreground="{StaticResource ButtonFont}"
+                               FontFamily="Segoe UI"
+                               FontSize="10"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Label x:Name="Encoder_Rot_" 
+                               Content="Rotation:" 
+                               HorizontalAlignment="Left" 
+                               HorizontalContentAlignment="Right"
+                               Height="24"
+                               Width="50"
+                               Margin="1,-3,0,-3" 
+                               Foreground="{StaticResource ButtonFont}"
+                               FontFamily="Segoe UI"
+                               FontSize="10"/>
+                            <Label x:Name="Encoder_Rot" 
+                               Content="0" 
+                               HorizontalAlignment="Left" 
+                               HorizontalContentAlignment="Left"
+                               Height="24"
+                               Width="50"
+                               Margin="0,-3,1,-3" 
+                               Foreground="{StaticResource ButtonFont}"
+                               FontFamily="Segoe UI"
+                               FontSize="10"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Label x:Name="Encoder_Val_" 
+                               Content="Enc Val:" 
+                               HorizontalAlignment="Left" 
+                               HorizontalContentAlignment="Right"
+                               Height="24"
+                               Width="50"
+                               Margin="1,-3,0,-3" 
+                               Foreground="{StaticResource ButtonFont}"
+                               FontFamily="Segoe UI"
+                               FontSize="10"/>
+                            <Label x:Name="Encoder_Val" 
+                               Content="0" 
+                               HorizontalAlignment="Left" 
+                               HorizontalContentAlignment="Left"
+                               Height="24"
+                               Width="50"
+                               Margin="0,-3,1,-3" 
+                               Foreground="{StaticResource ButtonFont}"
+                               FontFamily="Segoe UI"
+                               FontSize="10"/>
+
+                        </StackPanel>
+                        <Button Style="{StaticResource Button_Generic}"
+                                x:Name="btn_Calibration"
+                                HorizontalContentAlignment="Center"
+                                DockPanel.Dock="Left"
+                                Content="Calibration"
+                                Margin="0,10,0,0"
+                                FontSize="10"
+                                Width="100" Click="btn_Calibration_Click" />
+                    </StackPanel>
+
+                </StackPanel>
+
+            </Border>
+        </StackPanel>
+ 
+    </Grid>
+</Page>

@@ -1,0 +1,286 @@
+﻿<Window x:Class="EVO_MOTION_D6X8.Save_Profile_Window"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EVO_MOTION_D6X8"
+        mc:Ignorable="d"
+        Title="Save_Profile_Window" Height="450" Width="800" Closing="Window_Closing">
+    <Grid Background="{StaticResource Background_1}">
+        <Border Background="{StaticResource Background_2}"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left"
+                CornerRadius="5"
+                Margin="20">
+            <DockPanel>
+                <CheckBox x:Name="chk_MKButtonSave" Content="Save Button Values"
+                          FontFamily="Segoe UI"
+                          FontSize="12"
+                          FontWeight="Bold"
+                          Foreground="{StaticResource ButtonFont}"
+                          HorizontalAlignment="Center"
+                          DockPanel.Dock="Top"
+                          Margin="10,10,10,10"/>
+                <Label x:Name="lbl_saveMK1"
+                       Foreground="{StaticResource Paragraph}"
+                       DockPanel.Dock="Top"
+                       FontFamily="Segoe UI"
+                       FontSize="12"
+                       FontWeight="Bold"
+                       Content="MK1: ctrl+shift+i"/>
+                <Label x:Name="lbl_saveMK2"
+                       Foreground="{StaticResource Paragraph}"
+                       DockPanel.Dock="Top"
+                       FontFamily="Segoe UI"
+                       FontSize="12"
+                       FontWeight="Bold"
+                       Content="MK1: ctrl+shift+i"/>
+                <Label x:Name="lbl_saveMK3"
+                       Foreground="{StaticResource Paragraph}"
+                       DockPanel.Dock="Top"
+                       FontFamily="Segoe UI"
+                       FontSize="12"
+                       FontWeight="Bold"
+                       Content="MK1: ctrl+shift+i"/>
+                <Label x:Name="lbl_saveMK4"
+                       Foreground="{StaticResource Paragraph}"
+                       DockPanel.Dock="Top"
+                       FontFamily="Segoe UI"
+                       FontSize="12"
+                       FontWeight="Bold"
+                       Content="MK1: ctrl+shift+i"/>
+                <Label x:Name="lbl_saveMK5"
+                       Foreground="{StaticResource Paragraph}"
+                       DockPanel.Dock="Top"
+                       FontFamily="Segoe UI"
+                       FontSize="12"
+                       FontWeight="Bold"
+                       Content="MK1: ctrl+shift+i"/>
+                <Label x:Name="lbl_saveMK6"
+                       Foreground="{StaticResource Paragraph}"
+                       DockPanel.Dock="Top"
+                       FontFamily="Segoe UI"
+                       FontSize="12"
+                       FontWeight="Bold"
+                       Content="MK1: ctrl+shift+i"/>
+                <Label x:Name="lbl_saveMK7"
+                       Foreground="{StaticResource Paragraph}"
+                       DockPanel.Dock="Top"
+                       FontFamily="Segoe UI"
+                       FontSize="12"
+                       FontWeight="Bold"
+                       Content="MK1: ctrl+shift+i"/>
+                <Label x:Name="lbl_saveMK8"
+                       Foreground="{StaticResource Paragraph}"
+                       DockPanel.Dock="Top"
+                       FontFamily="Segoe UI"
+                       FontSize="12"
+                       FontWeight="Bold"
+                       Content="MK1: ctrl+shift+i"/>
+
+            </DockPanel>
+        </Border>
+
+        <Border Background="{StaticResource Background_2}"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left"
+                CornerRadius="5"
+                Margin="200,20,20,20">
+            <DockPanel>
+                <CheckBox x:Name="chk_VkButtonSave" Content="Save VK Button Values"
+                          FontFamily="Segoe UI"
+                          FontSize="12"
+                          FontWeight="Bold"
+                          Foreground="{StaticResource ButtonFont}"
+                          HorizontalAlignment="Center"
+                          DockPanel.Dock="Top"
+                          Margin="10,10,10,10"/>
+                <Label x:Name="lbl_saveVk1"
+                       Foreground="{StaticResource Paragraph}"
+                       DockPanel.Dock="Top"
+                       FontFamily="Segoe UI"
+                       FontSize="12"
+                       FontWeight="Bold"
+                       Content="Vk1: ctrl+shift+i"/>
+                <Label x:Name="lbl_saveVk2"
+                       Foreground="{StaticResource Paragraph}"
+                       DockPanel.Dock="Top"
+                       FontFamily="Segoe UI"
+                       FontSize="12"
+                       FontWeight="Bold"
+                       Content="Vk2: ctrl+shift+i"/>
+                <Label x:Name="lbl_saveVk3"
+                       Foreground="{StaticResource Paragraph}"
+                       DockPanel.Dock="Top"
+                       FontFamily="Segoe UI"
+                       FontSize="12"
+                       FontWeight="Bold"
+                       Content="Vk3: ctrl+shift+i"/>
+                <Label x:Name="lbl_saveVk4"
+                       Foreground="{StaticResource Paragraph}"
+                       DockPanel.Dock="Top"
+                       FontFamily="Segoe UI"
+                       FontSize="12"
+                       FontWeight="Bold"
+                       Content="Vk4: ctrl+shift+i"/>
+                <Label x:Name="lbl_saveVk5"
+                       Foreground="{StaticResource Paragraph}"
+                       DockPanel.Dock="Top"
+                       FontFamily="Segoe UI"
+                       FontSize="12"
+                       FontWeight="Bold"
+                       Content="Vk5: ctrl+shift+i"/>
+                <Label x:Name="lbl_saveVk6"
+                       Foreground="{StaticResource Paragraph}"
+                       DockPanel.Dock="Top"
+                       FontFamily="Segoe UI"
+                       FontSize="12"
+                       FontWeight="Bold"
+                       Content="Vk6: ctrl+shift+i"/>
+                <Label x:Name="lbl_saveVk7"
+                       Foreground="{StaticResource Paragraph}"
+                       DockPanel.Dock="Top"
+                       FontFamily="Segoe UI"
+                       FontSize="12"
+                       FontWeight="Bold"
+                       Content="Vk7: ctrl+shift+i"/>
+                <Label x:Name="lbl_saveVk8"
+                       Foreground="{StaticResource Paragraph}"
+                       DockPanel.Dock="Top"
+                       FontFamily="Segoe UI"
+                       FontSize="12"
+                       FontWeight="Bold"
+                       Content="Vk8: ctrl+shift+i"/>
+
+            </DockPanel>
+        </Border>
+
+        <Border Background="{StaticResource Background_2}"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left"
+                CornerRadius="5"
+                Margin="400,20,20,20">
+            <DockPanel>
+                <CheckBox x:Name="chk_LEDSave" Content="Save LED Values"
+                          FontFamily="Segoe UI"
+                          FontSize="12"
+                          FontWeight="Bold"
+                          Foreground="{StaticResource ButtonFont}"
+                          HorizontalAlignment="Center"
+                          DockPanel.Dock="Top"
+                          Margin="10,10,10,10"/>
+
+                <Label x:Name="lbl_saveRED"
+                       Foreground="{StaticResource Paragraph}"
+                       DockPanel.Dock="Top"
+                       FontFamily="Segoe UI"
+                       FontSize="12"
+                       FontWeight="Bold"
+                       Content="RED"/>
+
+                <Label x:Name="lbl_saveGREEN"
+                       Foreground="{StaticResource Paragraph}"
+                       DockPanel.Dock="Top"
+                       FontFamily="Segoe UI"
+                       FontSize="12"
+                       FontWeight="Bold"
+                       Content="GREEN"/>
+
+                <Label x:Name="lbl_saveBLUE"
+                       Foreground="{StaticResource Paragraph}"
+                       DockPanel.Dock="Top"
+                       FontFamily="Segoe UI"
+                       FontSize="12"
+                       FontWeight="Bold"
+                       Content="BLUE"/>
+
+                <Label x:Name="lbl_brightness"
+                       Foreground="{StaticResource Paragraph}"
+                       DockPanel.Dock="Top"
+                       FontFamily="Segoe UI"
+                       FontSize="12"
+                       FontWeight="Bold"
+                       Content="LED Brightness"/>
+
+                <Label x:Name="lbl_saveLEDmode"
+                       Foreground="{StaticResource Paragraph}"
+                       DockPanel.Dock="Top"
+                       FontFamily="Segoe UI"
+                       FontSize="12"
+                       FontWeight="Bold"
+                       Content="Led Mode"/>
+
+                <Label x:Name="lbl_saveLEDmodeName"
+                       Foreground="{StaticResource Paragraph}"
+                       DockPanel.Dock="Top"
+                       FontFamily="Segoe UI"
+                       FontSize="12"
+                       FontWeight="Bold"
+                       Content="Led Mode Name"/>
+
+            </DockPanel>
+        </Border>
+
+        <Border Background="{StaticResource Background_2}"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left"
+                CornerRadius="5"
+                Margin="550,20,20,20">
+            <DockPanel>
+                <CheckBox x:Name="chk_DeviceModeSave" Content="Save Device Mode"
+                          FontFamily="Segoe UI"
+                          FontSize="12"
+                          FontWeight="Bold"
+                          Foreground="{StaticResource ButtonFont}"
+                          HorizontalAlignment="Center"
+                          DockPanel.Dock="Top"
+                          Margin="10,10,10,10"/>
+
+                <Label x:Name="lbl_saveDeviceMode"
+                       Foreground="{StaticResource Paragraph}"
+                       DockPanel.Dock="Top"
+                       FontFamily="Segoe UI"
+                       FontSize="12"
+                       FontWeight="Bold"
+                       Content="Device Mode:"/>
+
+                <Label x:Name="lbl_saveDeviceModeName"
+                       Foreground="{StaticResource Paragraph}"
+                       DockPanel.Dock="Top"
+                       FontFamily="Segoe UI"
+                       FontSize="12"
+                       FontWeight="Bold"
+                       Content="Device Mode Name:"/>
+
+                <Label x:Name="lbl_saveCAD"
+                       Foreground="{StaticResource Paragraph}"
+                       DockPanel.Dock="Top"
+                       FontFamily="Segoe UI"
+                       FontSize="12"
+                       FontWeight="Bold"
+                       Content="CAD:"/>
+
+                <Label x:Name="lbl_saveCADName"
+                       Foreground="{StaticResource Paragraph}"
+                       DockPanel.Dock="Top"
+                       FontFamily="Segoe UI"
+                       FontSize="12"
+                       FontWeight="Bold"
+                       Content="CAD Name:"/>
+
+
+            </DockPanel>
+        </Border>
+        <Button x:Name="btn_Save_Profile" 
+                Content="Save" 
+                HorizontalContentAlignment="Center"
+                Width="100"
+                Style="{StaticResource Button_Generic}"
+                HorizontalAlignment="Left" 
+                Margin="20,336,0,0" 
+                VerticalAlignment="Top" Click="btn_Save_Profile_Click"/>
+
+        <CheckBox x:Name="chk_NavasButton" Content="Navigation as Button" HorizontalAlignment="Left" Margin="549,286,0,0" VerticalAlignment="Top" Foreground="White"/>
+
+    </Grid>
+</Window>

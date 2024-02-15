@@ -1,0 +1,60 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    
+    <!--Color Palette Web Sites-->
+    <!--
+    https://learntocodewith.me/posts/color-palette-tools/
+    https://htmlburger.com/blog/ui-color-scheme/
+
+    https://coolors.co/fcf7ff-376996-6290c8-88292f-0c1713
+    https://colors.muz.li/color-palette-generator/4d4dff
+    https://www.happyhues.co/palettes/4
+    https://www.khroma.co/generator
+    https://m3.material.io/styles/icons/overview
+    https://colors.eva.design/
+    https://colordesigner.io/
+    https://mycolor.space/?hex=%232E40D8&sub=1
+    https://www.materialpalette.com/
+    http://www.perbang.dk/color+scheme/
+    https://color.hailpixel.com/
+    http://palettr.com/
+    https://www.toptal.com/designers/colourcode/triad-color-builder
+    
+    Referance Dashboard Designs
+    
+    https://dribbble.com/shots/10090105-Dashboard-UI
+    https://dribbble.com/shots/5558321-Money-Management-Dashboard
+    -->
+    <!--
+    Background #16161a
+    Button #7f5af0
+    Headline #fffffe
+    Button Text #fffffe
+    Paragraph #94a1b2
+    -->
+    
+
+
+    <!--Background Colors-->
+
+    <SolidColorBrush x:Key="MainFrames" Color="#FF16161a"/>
+    <SolidColorBrush x:Key="SideBarPanel" Color="#FF222B45"/>
+    <SolidColorBrush x:Key="WindowTop" Color="#FF313131"/>
+    
+    <!--Color Palette-->
+    <SolidColorBrush x:Key="color1" Color="#FF1D56FF"/>
+    <SolidColorBrush x:Key="color2" Color="LimeGreen"/>
+    <SolidColorBrush x:Key="color3" Color="DarkRed"/>
+    <!--Font Colors-->
+    <SolidColorBrush x:Key="MainLabel" Color="#FFFAFAFA"/>
+    <SolidColorBrush x:Key="ButtonFont" Color="#DBDCDC"/>
+
+    <SolidColorBrush x:Key="Background_1" Color="#FF1C2233"/>
+    <SolidColorBrush x:Key="Background_2" Color="#FF323B54"/>
+    <SolidColorBrush x:Key="Button_Background_1" Color="#FF7f5af0"/>
+
+    <SolidColorBrush x:Key="HeadLine" Color="#DBDCDC"/>
+    <SolidColorBrush x:Key="Paragraph" Color="#9699A5"/>
+
+</ResourceDictionary>

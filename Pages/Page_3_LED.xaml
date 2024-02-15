@@ -1,0 +1,88 @@
+﻿<Page x:Class="EVO_MOTION_D6X8.Page_3_LED"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:EVO_MOTION_D6X8"
+      mc:Ignorable="d" 
+      Title="Page_3_LED" Width="750" Height="560" Loaded="Page_Loaded">
+
+    <Grid Background="{StaticResource Background_1}">
+
+        <Border x:Name="border_colorwhell"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Margin="20,100,0,0"
+                Background="{StaticResource Background_2}"
+                CornerRadius="5">
+            <DockPanel>
+                <Canvas x:Name="pcb_colorwhellPicture" 
+                        Width="300px" 
+                        Height="300px" 
+                        HorizontalAlignment="Center" 
+                        VerticalAlignment="Center" 
+                        MouseMove="Canvas_MouseMove"
+                        MouseDown="pcb_colorwhellPicture_MouseDown"
+                        DockPanel.Dock="Top"
+                        Margin="10,10,10,10"
+                        Cursor="Cross">
+                    <Canvas.Background>
+                        <ImageBrush ImageSource="/pictures/colorwhell/pngegg (2).png"/>
+                    </Canvas.Background>
+                </Canvas>
+                <StackPanel Orientation="Horizontal" 
+                            HorizontalAlignment="Center"
+                            DockPanel.Dock="Top">
+                    <Label x:Name="lbl_RED" 
+                           Content="Label" 
+                           HorizontalAlignment="Center" 
+                           Margin="0,0,0,0" 
+                           Foreground="#FFBD1414" 
+                           FontWeight="Bold"
+                           FontSize="15"/>
+                    <Label x:Name="lbl_GREEN" 
+                           Content="Label" 
+                           HorizontalAlignment="Left" 
+                           Margin="0,0,0,0" 
+                           Foreground="Green" 
+                           FontWeight="Bold"
+                           FontSize="15"/>
+                    <Label x:Name="lbl_BLUE" 
+                           Content="Label" 
+                           HorizontalAlignment="Right" 
+                           Margin="0,0,0,0" 
+                           Foreground="#FF4141FF" 
+                           FontWeight="Bold"
+                           FontSize="15"/>
+                </StackPanel>
+                <Slider Style="{DynamicResource SliderStyle1}" x:Name="slider_Brightness" 
+                        HorizontalAlignment="Stretch" 
+                        VerticalAlignment="Top"
+                        Margin="10,10,10,10"
+                        DockPanel.Dock="Top" Maximum="45" Cursor="Hand" 
+                        ValueChanged="slider_Brightness_ValueChanged" SmallChange="0"/>
+
+            </DockPanel>
+        </Border>
+
+
+
+        <ComboBox Style="{DynamicResource ComboBoxStyle1}"  
+                  x:Name="cmb_LedEffects" 
+                  HorizontalAlignment="Left" 
+                  Margin="20,40,0,0" 
+                  VerticalAlignment="Top" 
+                  Width="320" 
+                  FontSize="22"
+                  FontFamily="Segoe UI"
+                  SelectedValuePath="Content"
+                  SelectionChanged="cmb_LedEffects_SelectionChanged">
+            <ComboBoxItem Content="Solid"/>
+            <ComboBoxItem Content="Effect1"/>
+            <ComboBoxItem Content="Effect2"/>
+            <ComboBoxItem Content="Effect3"/>
+            <ComboBoxItem Content="Effect4"/>
+        </ComboBox>
+
+    </Grid>
+</Page>

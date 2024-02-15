@@ -1,0 +1,229 @@
+﻿<Window x:Name="MainWindow_1" 
+        x:Class="EVO_MOTION_D6X8.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:btnTags="clr-namespace:Button_Tags"
+        mc:Ignorable="d"
+        Title="MainWindow" 
+        Height="600" 
+        Width="900" 
+        WindowStartupLocation="CenterScreen" 
+        ResizeMode="NoResize" 
+        Background="Transparent" 
+        Opacity="1" 
+        WindowStyle="None" 
+        AllowsTransparency="True">
+
+    <Grid x:Name="Main_Grid" 
+          Background="{StaticResource Background_1}" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Row="1" Background="{StaticResource Background_2}">
+
+            
+            
+            <RadioButton x:Name="btn_Main" 
+                         Style="{DynamicResource Menu_Button_Radio}"
+                         btnTags:IconProperties.Tag="{StaticResource Home_Solid}"
+                         btnTags:IconProperties.TagFill="{StaticResource Paragraph}"
+                         btnTags:IconProperties.TagStroke="Transparent"
+                         btnTags:IconProperties.TagStrokeThickenss="0"
+                         btnTags:IconProperties.TagIconHeight="35"
+                         btnTags:IconProperties.TagIconWidth="35"
+                         
+                         btnTags:IconProperties.TagOnMouseOver="{StaticResource Home_Solid}"
+                         btnTags:IconProperties.TagFillMouseOver="Transparent"
+                         btnTags:IconProperties.TagStrokeMouseOver="{StaticResource ButtonFont}"
+                         btnTags:IconProperties.TagStrokeThicknessMouseOver="3"
+                         
+                         btnTags:IconProperties.TagOnPressed="{StaticResource Home_Solid}"
+                         btnTags:IconProperties.TagFillMousePressed="{StaticResource ButtonFont}"
+                         btnTags:IconProperties.TagStrokeMousePressed="Transparent"
+                         btnTags:IconProperties.TagStrokeThicknessMousePressed="0"
+
+                         Content="Main"
+                         Margin="0,120,0,0"
+                         Click="btn_Main_Click"/>
+
+            <RadioButton x:Name="btn_buttonconfig" 
+                         Style="{StaticResource Menu_Button_Radio}"
+                         btnTags:IconProperties.Tag="{StaticResource circle_dot_solid}"
+                         btnTags:IconProperties.TagFill="{StaticResource Paragraph}"
+                         btnTags:IconProperties.TagStroke="Transparent"
+                         btnTags:IconProperties.TagStrokeThickenss="0"
+                         btnTags:IconProperties.TagIconHeight="35"
+                         btnTags:IconProperties.TagIconWidth="35"
+                         
+                         btnTags:IconProperties.TagOnMouseOver="{StaticResource  circle_dot_regular}"
+                         btnTags:IconProperties.TagFillMouseOver="{StaticResource ButtonFont}"
+                         btnTags:IconProperties.TagStrokeMouseOver="{StaticResource ButtonFont}"
+                         btnTags:IconProperties.TagStrokeThicknessMouseOver="0"
+                         
+                         btnTags:IconProperties.TagOnPressed="{StaticResource circle_dot_solid}"
+                         btnTags:IconProperties.TagFillMousePressed="{StaticResource ButtonFont}"
+                         btnTags:IconProperties.TagStrokeMousePressed="Transparent"
+                         btnTags:IconProperties.TagStrokeThicknessMousePressed="0"
+                         Content="Buttons"
+                         Margin="0,15,0,0"
+                         Click="btn_Macrobtn_Click"/>
+
+           
+
+            <RadioButton x:Name="btn_LED" 
+                         Style="{StaticResource Menu_Button_Radio}" 
+                         
+                         btnTags:IconProperties.Tag="{StaticResource Led_Config_Solid}"
+                         btnTags:IconProperties.TagFill="{StaticResource Paragraph}"
+                         btnTags:IconProperties.TagStroke="Transparent"
+                         btnTags:IconProperties.TagStrokeThickenss="0"
+                         btnTags:IconProperties.TagIconHeight="35"
+                         btnTags:IconProperties.TagIconWidth="35"
+                         
+                         btnTags:IconProperties.TagOnMouseOver="{StaticResource  Led_Config_Solid}"
+                         btnTags:IconProperties.TagFillMouseOver="Transparent"
+                         btnTags:IconProperties.TagStrokeMouseOver="{StaticResource ButtonFont}"
+                         btnTags:IconProperties.TagStrokeThicknessMouseOver="3"
+                         
+                         btnTags:IconProperties.TagOnPressed="{StaticResource Led_Config_Solid}"
+                         btnTags:IconProperties.TagFillMousePressed="{StaticResource ButtonFont}"
+                         btnTags:IconProperties.TagStrokeMousePressed="Transparent"
+                         btnTags:IconProperties.TagStrokeThicknessMousePressed="0"
+                         Content="LED"
+                         Margin="0,15,0,0"
+                         Click="btn_Led_Click"/>
+
+            <RadioButton x:Name="btn_VirtualKeys" 
+                         Style="{StaticResource Menu_Button_Radio}"
+                          
+                         btnTags:IconProperties.Tag="{StaticResource virtual_keys}"
+                         btnTags:IconProperties.TagFill="{StaticResource Paragraph}"
+                         btnTags:IconProperties.TagStroke="Transparent"
+                         btnTags:IconProperties.TagStrokeThickenss="0"
+                         btnTags:IconProperties.TagIconWidth="35"
+                         btnTags:IconProperties.TagIconHeight="35"
+                          
+                         btnTags:IconProperties.TagOnMouseOver="{StaticResource  virtual_keys}"
+                         btnTags:IconProperties.TagFillMouseOver="Transparent"
+                         btnTags:IconProperties.TagStrokeMouseOver="{StaticResource ButtonFont}"
+                         btnTags:IconProperties.TagStrokeThicknessMouseOver="3"
+                          
+                         btnTags:IconProperties.TagOnPressed="{StaticResource virtual_keys}"
+                         btnTags:IconProperties.TagFillMousePressed="{StaticResource ButtonFont}"
+                         btnTags:IconProperties.TagStrokeMousePressed="Transparent"
+                         btnTags:IconProperties.TagStrokeThicknessMousePressed="0"
+                          
+                         Content="Virtual Keys"
+                         Margin="0,15,0,0" Click="btn_VirtualKeys_Click"/>
+
+            <Button x:Name="btn_minimize" 
+                    Style="{StaticResource Menu_Button_Normal}"
+                    btnTags:IconProperties.Tag="{StaticResource exit_right}"
+                    btnTags:IconProperties.TagFill="{StaticResource Paragraph}"
+                    btnTags:IconProperties.TagStroke="Transparent"
+                    btnTags:IconProperties.TagStrokeThickenss="0"
+                    btnTags:IconProperties.TagIconWidth="35"
+                    btnTags:IconProperties.TagIconHeight="35"
+                         
+                    btnTags:IconProperties.TagOnMouseOver="{StaticResource  exit_left}"
+                    btnTags:IconProperties.TagFillMouseOver="{StaticResource ButtonFont}"
+                    btnTags:IconProperties.TagStrokeMouseOver="{StaticResource ButtonFont}"
+                    btnTags:IconProperties.TagStrokeThicknessMouseOver="0"
+
+                    Content="Minimize"
+                    Margin="0,15,0,0"
+                    Click="btn_minimize_Click"/>
+            
+
+
+
+
+
+
+
+        </StackPanel>
+
+        <Border x:Name="window_top" 
+                Background="{StaticResource Background_2}" 
+                Grid.Column="1" 
+                MouseDown="window_top_MouseDown"
+                Margin="15,0,0,0">
+
+            <DockPanel >
+                <Label x:Name="lbl_PageName" 
+                       DockPanel.Dock="Left"
+                       Content="" 
+                       HorizontalContentAlignment="Left"
+                       VerticalAlignment="Center"
+                       VerticalContentAlignment="Center"
+                       Margin="15,0,0,0"
+                       Foreground="{StaticResource HeadLine}" 
+                       FontFamily="Segoe UI" 
+                       FontWeight="Bold" 
+                       FontSize="20"/>
+
+                <Label x:Name="lbl_DeviceName" 
+                       DockPanel.Dock="Right"
+                       Content="EvoMotion-D6X8" 
+                       HorizontalContentAlignment="Right"
+                       VerticalAlignment="Center"
+                       VerticalContentAlignment="Center"
+                       Margin="0,0,15,0"
+                       Foreground="{StaticResource HeadLine}" 
+                       FontFamily="Segoe UI" 
+                       FontWeight="Bold" 
+                       FontSize="20"/>
+            </DockPanel>
+        </Border>
+
+        <Border  Grid.Column="1"
+                 Width="15"
+                 HorizontalAlignment="Left"
+                 Background="{StaticResource Background_1}"/>
+
+        <Frame x:Name="frm_Main" 
+               Grid.Column="1" 
+               Grid.Row="2"
+               Content="" 
+               NavigationUIVisibility="Hidden" 
+               Grid.RowSpan="2"/>
+
+        <Border x:Name="MainBorder_1" 
+                Background="{StaticResource Background_2}">
+            <DockPanel>
+                <ToggleButton x:Name="btn_connectDevice" 
+                              Style="{StaticResource IconContent_Button_Toggle}"
+                              Content="Connect Device"
+                              FontSize="14"
+                              btnTags:IconProperties.Tag="{StaticResource circle}"
+                              btnTags:IconProperties.TagIconHeight="15"
+                              btnTags:IconProperties.TagIconWidth="15"
+                              btnTags:IconProperties.TagFill="{StaticResource Paragraph}"
+                              btnTags:IconProperties.TagStroke="Transparent"
+                              btnTags:IconProperties.TagStrokeThickenss="0"
+                        
+                              btnTags:IconProperties.TagOnMouseOver="{StaticResource circle}"
+                              btnTags:IconProperties.TagFillMouseOver="Transparent"
+                              btnTags:IconProperties.TagStrokeMouseOver="{StaticResource Paragraph}"
+                              btnTags:IconProperties.TagStrokeThicknessMouseOver="3"
+                              
+                              btnTags:IconProperties.TagOnPressed="{StaticResource circle}"
+                              btnTags:IconProperties.TagFillMousePressed="{StaticResource Paragraph}"
+                              btnTags:IconProperties.TagStrokeMousePressed="Transparent"
+                              btnTags:IconProperties.TagStrokeThicknessMousePressed="0"
+                        
+                              HorizontalAlignment="Center"
+                              VerticalAlignment="Center" 
+                              Click="btn_connectDevice_Click"/>
+
+            </DockPanel>
+        </Border>
+    </Grid>
+</Window>
