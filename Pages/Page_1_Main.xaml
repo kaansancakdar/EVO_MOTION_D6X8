@@ -37,7 +37,7 @@
                       VerticalAlignment="Top" 
                       Margin="15,185,0,0" 
                       IsEnabled="False" />
-        
+
         <StackPanel x:Name="Timer_Panel" 
                     Orientation="Horizontal"  
                     Background="Transparent" 
@@ -592,6 +592,7 @@
 
             </Border>
         </StackPanel>
- 
+
+
     </Grid>
 </Page>

@@ -6,6 +6,7 @@ using Newtonsoft.Json;
 using SolidWorks.Interop.sldworks;
 using Solidworks_Api;
 using System;
+using System.Data;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
@@ -17,6 +18,12 @@ using System.Windows.Media.Imaging;
 using System.Windows.Threading;
 using USB_Communication;
 using MessageBox = System.Windows.Forms.MessageBox;
+using System.Runtime.InteropServices;
+using KeyShortCut;
+using SolidWorks.Interop.swconst;
+using System.Windows.Input;
+using System.Globalization;
+using LibUsbDotNet.Main;
 
 namespace EVO_MOTION_D6X8
 {
@@ -36,8 +43,11 @@ namespace EVO_MOTION_D6X8
         Save_Profile_Window SPW = null;
         MainWindow MW = null;
         Functions FC = null;
+        KeyCodes KY = new KeyCodes();
 
         Page_2_Button PG2 = null;
+
+        new KeyCodes.V_Keys_TR Virtual_Keys = new KeyCodes.V_Keys_TR();
 
         public List<Button_Values_Struct> ListofButtonValues = new List<Button_Values_Struct>();
 
@@ -185,13 +195,39 @@ namespace EVO_MOTION_D6X8
                     System.Windows.Forms.SendKeys.SendWait(FC.NavigationAsButtonString(NavigationStruct, ActiveKeys));
                 }
 
-                if (timer1_count >= 250)
+                if (PG2.btn_NavigationasButton.IsChecked == true && GV.tilt > 500)
                 {
-                    System.Windows.Forms.SendKeys.SendWait(FC.NavigationAsButtonString(NavigationStruct, ActiveKeys));
+                    if (NavigationFlagName == true)
+                    {
+                        NavigationFlagName = false;
+                        System.Windows.Forms.SendKeys.SendWait(FC.NavigationAsButtonString(NavigationStruct, ActiveKeys));
+                    }
+
+                    if (timer1_count >= 250)
+                    {
+                        if (NavigationStruct.Text_or_Shortcut == 0)
+                        {
+                            keybd_event(KY.VKeys_trq[NavigationStruct.cmb_val1], 0, 0, 0);
+                            keybd_event(KY.VKeys_trq[NavigationStruct.cmb_val2], 0, 0, 0);
+                            keybd_event(KY.VKeys_trq[NavigationStruct.cmb_val3], 0, 0, 0);
+                        }
+                        else
+                        {
+
+                        }
+
+
+                    }
                 }
             }
 
         }
+
+        [DllImport("user32.dll")]
+        static extern void keybd_event(byte bVk, byte bScan, uint dwFlags, int dwExtraInfo);
+
+        [DllImport("user32.dll")] 
+        static extern short VkKeyScan(char ch);
 
         public void Worker_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
@@ -239,6 +275,7 @@ namespace EVO_MOTION_D6X8
             float offset_hallsensor = (float)0.003;
 
             #region Extra Calculation
+
             if (tilt_map > offset || tilt_map < -offset || roll_map > offset || roll_map < -offset)
             {
                 Tilt_Map.Content = (tilt_map).ToString();
@@ -298,7 +335,11 @@ namespace EVO_MOTION_D6X8
             Encoder_Val.Content = enc_old_value;
             #endregion
 
-            #region Navigation
+            #region Navigation Movements
+            bool shift_flag = false;
+            bool ctrl_flag = false;
+            bool alt_flag = false;
+
 
             if (GV.tilt > 200) //Pitch Up
             {
@@ -318,15 +359,63 @@ namespace EVO_MOTION_D6X8
                     if (flag_navigation_pitchup == true)
                     {
                         flag_navigation_pitchup = false;
-                        System.Windows.Forms.SendKeys.SendWait(FC.NavigationAsButtonString(GV.PitchUp_Values, PG2.active_keys));
-                        System.Windows.Forms.SendKeys.Flush();
+                        //System.Windows.Forms.SendKeys.SendWait(FC.NavigationAsButtonString(GV.PitchUp_Values, PG2.active_keys));
+                        if(GV.PitchUp_Values.Modifier!=0)
+                        {
+                            foreach(var a in GV.PitchUp_Values.MK_Data_Shortcut_String)
+                            {
+                                if (a.Contains("Shift")==true) { shift_flag = true; keybd_event(0xA0, 0, 0, 0); }
+                                if (a.Contains("Control") == true) { ctrl_flag = true; keybd_event(0xA2, 0, 0, 0); }
+                                if (a.Contains("Alt") == true) { alt_flag = true; keybd_event(0xA4, 0, 0, 0); }
+                            }
+
+                            string key1 = GV.PitchUp_Values.MK_Data_Shortcut_String[1];
+                            string key2 = GV.PitchUp_Values.MK_Data_Shortcut_String[2];
+
+                            //if(key1.Contains("LETTER")==true | key1.Contains("NUM")==true | key2.Contains("LETTER") == true | key2.Contains("NUM")==true)
+                            //{
+                                int key1_1 = VkKeyScan(Convert.ToChar(key1.Substring(key1.IndexOf("_") + 1).ToLower()));
+                                int key2_2 = VkKeyScan(Convert.ToChar(key2.Substring(key2.IndexOf("_") + 1).ToLower()));
+                                keybd_event((byte)key1_1, 0, 0, 0);
+                                keybd_event((byte)key2_2, 0, 0, 0);
+                                keybd_event((byte)key1_1, 0, 0x0002, 0);
+                                keybd_event((byte)key2_2, 0, 0x0002, 0);
+                            //}
+
+                            keybd_event(0xA0, 0, 0x0002, 0);
+                            keybd_event(0xA2, 0, 0x0002, 0);
+                            keybd_event(0xA4, 0, 0x0002, 0);
+                            
+
+                        }
+
+                        else
+                        {
+                            string key1 = GV.PitchUp_Values.MK_Data_Shortcut_String[0];
+                            string key2 = GV.PitchUp_Values.MK_Data_Shortcut_String[1];
+                            string key3 = GV.PitchUp_Values.MK_Data_Shortcut_String[2];
+
+                            //if (key1.Contains("LETTER") == true | key1.Contains("NUM") == true | key2.Contains("LETTER") == true | key2.Contains("NUM") == true)
+                            //{
+                            //    int key1_1 = VkKeyScan(Convert.ToChar(key1.Substring(key1.IndexOf("_") + 1).ToLower()));
+                            //int key2_2 = VkKeyScan(Convert.ToChar(key2.Substring(key2.IndexOf("_") + 1).ToLower()));
+                            //int key3_3 = VkKeyScan(Convert.ToChar(key3.Substring(key3.IndexOf("_") + 1).ToLower()));
+                            //keybd_event((byte)key1_1, 0, 0, 0);
+                            //keybd_event((byte)key2_2, 0, 0, 0);
+                            //keybd_event((byte)key3_3, 0, 0, 0);
+                            //keybd_event((byte)key1_1, 0, 0x0002, 0);
+                            //keybd_event((byte)key2_2, 0, 0x0002, 0);
+                            //keybd_event((byte)key3_3, 0, 0x0002, 0);
+
+                            //}
+
+                        }
+
                     }
 
                     if (timer1_count >= 250)
                     {
-                        System.Windows.Forms.SendKeys.Flush();
-                        System.Windows.Forms.SendKeys.SendWait(FC.NavigationAsButtonString(GV.PitchUp_Values, PG2.active_keys));
-
+                        
                     }
                 }
             }
@@ -353,7 +442,12 @@ namespace EVO_MOTION_D6X8
 
                     if (timer1_count >= 250)
                     {
-                        System.Windows.Forms.SendKeys.SendWait(FC.NavigationAsButtonString(GV.PitchDown_Values, PG2.active_keys));
+
+                        keybd_event(KY.VKeys_trq[GV.PitchDown_Values.cmb_val1], 0, 0, 0);
+                        keybd_event(KY.VKeys_trq[GV.PitchDown_Values.cmb_val2], 0, 0, 0);
+                        keybd_event(KY.VKeys_trq[GV.PitchDown_Values.cmb_val3], 0, 0, 0);
+
+                        
                     }
                 }
             }
@@ -380,7 +474,9 @@ namespace EVO_MOTION_D6X8
 
                     if (timer1_count >= 250)
                     {
-                        System.Windows.Forms.SendKeys.SendWait(FC.NavigationAsButtonString(GV.RollRight_Values, PG2.active_keys));
+                        keybd_event(KY.VKeys_trq[GV.RollRight_Values.cmb_val1], 0, 0, 0);
+                        keybd_event(KY.VKeys_trq[GV.RollRight_Values.cmb_val2], 0, 0, 0);
+                        keybd_event(KY.VKeys_trq[GV.RollRight_Values.cmb_val3], 0, 0, 0);
                     }
                 }
             }
@@ -407,7 +503,9 @@ namespace EVO_MOTION_D6X8
 
                     if (timer1_count >= 250)
                     {
-                        System.Windows.Forms.SendKeys.SendWait(FC.NavigationAsButtonString(GV.RollLeft_Values, PG2.active_keys));
+                        keybd_event(KY.VKeys_trq[GV.RollLeft_Values.cmb_val1], 0, 0, 0);
+                        keybd_event(KY.VKeys_trq[GV.RollLeft_Values.cmb_val2], 0, 0, 0);
+                        keybd_event(KY.VKeys_trq[GV.RollLeft_Values.cmb_val3], 0, 0, 0);
                     }
                 }
             }
@@ -433,7 +531,9 @@ namespace EVO_MOTION_D6X8
 
                     if (timer1_count >= 250)
                     {
-                        System.Windows.Forms.SendKeys.SendWait(FC.NavigationAsButtonString(GV.RollLeft_Values, PG2.active_keys));
+                        keybd_event(KY.VKeys_trq[GV.TransXPos_Values.cmb_val1], 0, 0, 0);
+                        keybd_event(KY.VKeys_trq[GV.TransXPos_Values.cmb_val2], 0, 0, 0);
+                        keybd_event(KY.VKeys_trq[GV.TransXPos_Values.cmb_val3], 0, 0, 0);
                     }
                 }
             }
@@ -460,7 +560,9 @@ namespace EVO_MOTION_D6X8
 
                     if (timer1_count >= 250)
                     {
-                        System.Windows.Forms.SendKeys.SendWait(FC.NavigationAsButtonString(GV.RollLeft_Values, PG2.active_keys));
+                        keybd_event(KY.VKeys_trq[GV.TransXNeg_Values.cmb_val1], 0, 0, 0);
+                        keybd_event(KY.VKeys_trq[GV.TransXNeg_Values.cmb_val2], 0, 0, 0);
+                        keybd_event(KY.VKeys_trq[GV.TransXNeg_Values.cmb_val3], 0, 0, 0);
                     }
                 }
             }
@@ -487,7 +589,9 @@ namespace EVO_MOTION_D6X8
 
                     if (timer1_count >= 250)
                     {
-                        System.Windows.Forms.SendKeys.SendWait(FC.NavigationAsButtonString(GV.TransYPos_Values, PG2.active_keys));
+                        keybd_event(KY.VKeys_trq[GV.TransYPos_Values.cmb_val1], 0, 0, 0);
+                        keybd_event(KY.VKeys_trq[GV.TransYPos_Values.cmb_val2], 0, 0, 0);
+                        keybd_event(KY.VKeys_trq[GV.TransYPos_Values.cmb_val3], 0, 0, 0);
                     }
                 }
             }
@@ -514,7 +618,9 @@ namespace EVO_MOTION_D6X8
 
                     if (timer1_count >= 250)
                     {
-                        System.Windows.Forms.SendKeys.SendWait(FC.NavigationAsButtonString(GV.TransYNeg_Values, PG2.active_keys));
+                        keybd_event(KY.VKeys_trq[GV.TransYNeg_Values.cmb_val1], 0, 0, 0);
+                        keybd_event(KY.VKeys_trq[GV.TransYNeg_Values.cmb_val2], 0, 0, 0);
+                        keybd_event(KY.VKeys_trq[GV.TransYNeg_Values.cmb_val3], 0, 0, 0);
                     }
                 }
             }
@@ -541,7 +647,9 @@ namespace EVO_MOTION_D6X8
 
                     if (timer1_count >= 250)
                     {
-                        System.Windows.Forms.SendKeys.SendWait(FC.NavigationAsButtonString(GV.YawCW_Values, PG2.active_keys));
+                        keybd_event(KY.VKeys_trq[GV.YawCW_Values.cmb_val1], 0, 0, 0);
+                        keybd_event(KY.VKeys_trq[GV.YawCW_Values.cmb_val2], 0, 0, 0);
+                        keybd_event(KY.VKeys_trq[GV.YawCW_Values.cmb_val3], 0, 0, 0);
                     }
                 }
             }
@@ -568,12 +676,12 @@ namespace EVO_MOTION_D6X8
 
                     if (timer1_count >= 250)
                     {
-                        System.Windows.Forms.SendKeys.SendWait(FC.NavigationAsButtonString(GV.YawCCW_Values, PG2.active_keys));
+                        keybd_event(KY.VKeys_trq[GV.YawCCW_Values.cmb_val1], 0, 0, 0);
+                        keybd_event(KY.VKeys_trq[GV.YawCCW_Values.cmb_val2], 0, 0, 0);
+                        keybd_event(KY.VKeys_trq[GV.YawCCW_Values.cmb_val3], 0, 0, 0);
                     }
                 }
             }
-
-
 
             else
             {
@@ -711,6 +819,7 @@ namespace EVO_MOTION_D6X8
                 }
             }
             #endregion
+
         }
 
 
@@ -1213,6 +1322,5 @@ namespace EVO_MOTION_D6X8
 
             FC.Send_Device(message, message.Length);
         }
-
     }
 }

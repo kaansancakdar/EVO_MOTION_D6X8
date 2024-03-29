@@ -63,7 +63,6 @@ namespace EVO_MOTION_D6X8
             pg1.GetMainWindow((MainWindow)MainWindow_1);
             pg1.GetFunctions(FC);
             pg1.GetPage2(pg2);
-            
 
             pg2.GetDevice(UC);
             pg2.GetGlobalVariables(GV);

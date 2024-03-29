@@ -693,7 +693,7 @@ namespace _Functions
                 int seperator;
                 if(ButtonStruct.Modifier!=0)
                 {
-                    string modifier = _active_keys[ButtonStruct.Modifier];
+                    string modifier = _active_keys[ButtonStruct.cmb_val1];
                     string key1 = _active_keys[ButtonStruct.cmb_val2];
                     string key2 = _active_keys[ButtonStruct.cmb_val3];
 
@@ -852,6 +852,8 @@ namespace _Functions
 
             return _NavigationAsButtonString;
         }
+
+        
         
     }
 }

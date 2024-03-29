@@ -308,6 +308,8 @@
     <Resource Include="pictures\Roll_Right.png" />
     <Resource Include="pictures\Yaw_CCW.png" />
     <Resource Include="pictures\Yaw_CW.png" />
+    <Resource Include="Keyboard Layout kbd\TRQ_Keyboard.txt" />
+    <Resource Include="Keyboard Layout kbd\US_International_Keyboard.txt" />
     <Content Include="svg\home_solid.svg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
