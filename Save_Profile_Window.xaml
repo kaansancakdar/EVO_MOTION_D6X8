@@ -5,13 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EVO_MOTION_D6X8"
         mc:Ignorable="d"
-        Title="Save_Profile_Window" Height="450" Width="800" Closing="Window_Closing">
+        Title="Save_Profile_Window" Height="550" Width="800" Closing="Window_Closing">
     <Grid Background="{StaticResource Background_1}">
         <Border Background="{StaticResource Background_2}"
                 VerticalAlignment="Top"
                 HorizontalAlignment="Left"
                 CornerRadius="5"
-                Margin="20">
+                Margin="20,20,0,0" Width="360">
             <DockPanel>
                 <CheckBox x:Name="chk_MKButtonSave" Content="Save Button Values"
                           FontFamily="Segoe UI"
@@ -27,56 +27,56 @@
                        FontFamily="Segoe UI"
                        FontSize="12"
                        FontWeight="Bold"
-                       Content="MK1: ctrl+shift+i"/>
+                       Content="MK1:"/>
                 <Label x:Name="lbl_saveMK2"
                        Foreground="{StaticResource Paragraph}"
                        DockPanel.Dock="Top"
                        FontFamily="Segoe UI"
                        FontSize="12"
                        FontWeight="Bold"
-                       Content="MK1: ctrl+shift+i"/>
+                       Content="MK2:"/>
                 <Label x:Name="lbl_saveMK3"
                        Foreground="{StaticResource Paragraph}"
                        DockPanel.Dock="Top"
                        FontFamily="Segoe UI"
                        FontSize="12"
                        FontWeight="Bold"
-                       Content="MK1: ctrl+shift+i"/>
+                       Content="MK3:"/>
                 <Label x:Name="lbl_saveMK4"
                        Foreground="{StaticResource Paragraph}"
                        DockPanel.Dock="Top"
                        FontFamily="Segoe UI"
                        FontSize="12"
                        FontWeight="Bold"
-                       Content="MK1: ctrl+shift+i"/>
+                       Content="MK4:"/>
                 <Label x:Name="lbl_saveMK5"
                        Foreground="{StaticResource Paragraph}"
                        DockPanel.Dock="Top"
                        FontFamily="Segoe UI"
                        FontSize="12"
                        FontWeight="Bold"
-                       Content="MK1: ctrl+shift+i"/>
+                       Content="MK5:"/>
                 <Label x:Name="lbl_saveMK6"
                        Foreground="{StaticResource Paragraph}"
                        DockPanel.Dock="Top"
                        FontFamily="Segoe UI"
                        FontSize="12"
                        FontWeight="Bold"
-                       Content="MK1: ctrl+shift+i"/>
+                       Content="MK6:"/>
                 <Label x:Name="lbl_saveMK7"
                        Foreground="{StaticResource Paragraph}"
                        DockPanel.Dock="Top"
                        FontFamily="Segoe UI"
                        FontSize="12"
                        FontWeight="Bold"
-                       Content="MK1: ctrl+shift+i"/>
+                       Content="MK7:"/>
                 <Label x:Name="lbl_saveMK8"
                        Foreground="{StaticResource Paragraph}"
                        DockPanel.Dock="Top"
                        FontFamily="Segoe UI"
                        FontSize="12"
                        FontWeight="Bold"
-                       Content="MK1: ctrl+shift+i"/>
+                       Content="MK8:"/>
 
             </DockPanel>
         </Border>
@@ -85,7 +85,7 @@
                 VerticalAlignment="Top"
                 HorizontalAlignment="Left"
                 CornerRadius="5"
-                Margin="200,20,20,20">
+                Margin="20,280,0,0" Width="360">
             <DockPanel>
                 <CheckBox x:Name="chk_VkButtonSave" Content="Save VK Button Values"
                           FontFamily="Segoe UI"
@@ -101,56 +101,56 @@
                        FontFamily="Segoe UI"
                        FontSize="12"
                        FontWeight="Bold"
-                       Content="Vk1: ctrl+shift+i"/>
+                       Content="Vk1:"/>
                 <Label x:Name="lbl_saveVk2"
                        Foreground="{StaticResource Paragraph}"
                        DockPanel.Dock="Top"
                        FontFamily="Segoe UI"
                        FontSize="12"
                        FontWeight="Bold"
-                       Content="Vk2: ctrl+shift+i"/>
+                       Content="Vk2:"/>
                 <Label x:Name="lbl_saveVk3"
                        Foreground="{StaticResource Paragraph}"
                        DockPanel.Dock="Top"
                        FontFamily="Segoe UI"
                        FontSize="12"
                        FontWeight="Bold"
-                       Content="Vk3: ctrl+shift+i"/>
+                       Content="Vk3:"/>
                 <Label x:Name="lbl_saveVk4"
                        Foreground="{StaticResource Paragraph}"
                        DockPanel.Dock="Top"
                        FontFamily="Segoe UI"
                        FontSize="12"
                        FontWeight="Bold"
-                       Content="Vk4: ctrl+shift+i"/>
+                       Content="Vk4:"/>
                 <Label x:Name="lbl_saveVk5"
                        Foreground="{StaticResource Paragraph}"
                        DockPanel.Dock="Top"
                        FontFamily="Segoe UI"
                        FontSize="12"
                        FontWeight="Bold"
-                       Content="Vk5: ctrl+shift+i"/>
+                       Content="Vk5:"/>
                 <Label x:Name="lbl_saveVk6"
                        Foreground="{StaticResource Paragraph}"
                        DockPanel.Dock="Top"
                        FontFamily="Segoe UI"
                        FontSize="12"
                        FontWeight="Bold"
-                       Content="Vk6: ctrl+shift+i"/>
+                       Content="Vk6:"/>
                 <Label x:Name="lbl_saveVk7"
                        Foreground="{StaticResource Paragraph}"
                        DockPanel.Dock="Top"
                        FontFamily="Segoe UI"
                        FontSize="12"
                        FontWeight="Bold"
-                       Content="Vk7: ctrl+shift+i"/>
+                       Content="Vk7:"/>
                 <Label x:Name="lbl_saveVk8"
                        Foreground="{StaticResource Paragraph}"
                        DockPanel.Dock="Top"
                        FontFamily="Segoe UI"
                        FontSize="12"
                        FontWeight="Bold"
-                       Content="Vk8: ctrl+shift+i"/>
+                       Content="Vk8:"/>
 
             </DockPanel>
         </Border>
@@ -277,10 +277,10 @@
                 Width="100"
                 Style="{StaticResource Button_Generic}"
                 HorizontalAlignment="Left" 
-                Margin="20,336,0,0" 
+                Margin="639,383,0,0" 
                 VerticalAlignment="Top" Click="btn_Save_Profile_Click"/>
 
-        <CheckBox x:Name="chk_NavasButton" Content="Navigation as Button" HorizontalAlignment="Left" Margin="549,286,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <CheckBox x:Name="chk_NavasButton" Content="Navigation as Button" HorizontalAlignment="Left" Margin="400,231,0,0" VerticalAlignment="Top" Foreground="White"/>
 
     </Grid>
 </Window>

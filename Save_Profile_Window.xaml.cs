@@ -30,6 +30,7 @@ namespace EVO_MOTION_D6X8
         Functions FC = null;
 
         MainWindow MW = null;
+        Page_2_Button PG2 = null;
 
         public Save_Profile_Window()
         {
@@ -46,12 +47,15 @@ namespace EVO_MOTION_D6X8
             MW = mainWindow;
         }
 
+        public void GetPage2(Page_2_Button pg2)
+        {
+            PG2 = pg2;
+        }
+
         internal void GetFunctions(Functions fc)
         {
             FC = fc;
-        }
-
-        
+        }       
 
         public void ReadGlobalValues()
         {
@@ -66,6 +70,15 @@ namespace EVO_MOTION_D6X8
             lbl_saveDeviceModeName.Content = "Device Mode Name:" + GV.DeviceMode_Name;
             lbl_saveCAD.Content = "CAD Software:" + GV.CADSoftware;
             lbl_saveCADName.Content = "CAD Software:" + GV.CADSoftware_Name;
+
+            lbl_saveMK1.Content = PG2.lst_macroKeyValues.Items.GetItemAt(0).ToString();
+            lbl_saveMK2.Content = PG2.lst_macroKeyValues.Items.GetItemAt(1).ToString();
+            lbl_saveMK3.Content = PG2.lst_macroKeyValues.Items.GetItemAt(2).ToString();
+            lbl_saveMK4.Content = PG2.lst_macroKeyValues.Items.GetItemAt(3).ToString();
+            lbl_saveMK5.Content = PG2.lst_macroKeyValues.Items.GetItemAt(4).ToString();
+            lbl_saveMK6.Content = PG2.lst_macroKeyValues.Items.GetItemAt(5).ToString();
+            lbl_saveMK7.Content = PG2.lst_macroKeyValues.Items.GetItemAt(6).ToString();
+            lbl_saveMK8.Content = PG2.lst_macroKeyValues.Items.GetItemAt(7).ToString();
 
         }
 

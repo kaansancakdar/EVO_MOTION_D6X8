@@ -68,6 +68,7 @@ namespace EVO_MOTION_D6X8
             pg2.GetGlobalVariables(GV);
             pg2.GetFunctions(FC);
             pg2.GetPage1(pg1);
+            
 
             pg3.GetDevice(UC);
             pg3.GetGlobalVariables(GV);
@@ -77,6 +78,7 @@ namespace EVO_MOTION_D6X8
             pg4.GetFunctions(FC);
 
             save_profile_window.GetMainWindow(this);
+            save_profile_window.GetPage2(pg2);
 
         }
 
