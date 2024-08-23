@@ -302,14 +302,14 @@
     <Resource Include="pictures\Move_-X.png" />
     <Resource Include="pictures\Move_-Y.png" />
     <Resource Include="pictures\Move_-Z.png" />
-    <Resource Include="pictures\Picth_Down.png" />
-    <Resource Include="pictures\Picth_Up.png" />
     <Resource Include="pictures\Roll_Left.png" />
     <Resource Include="pictures\Roll_Right.png" />
     <Resource Include="pictures\Yaw_CCW.png" />
     <Resource Include="pictures\Yaw_CW.png" />
     <Resource Include="Keyboard Layout kbd\TRQ_Keyboard.txt" />
     <Resource Include="Keyboard Layout kbd\US_International_Keyboard.txt" />
+    <Resource Include="pictures\Pitch_Down.png" />
+    <Resource Include="pictures\Pitch_Up.png" />
     <Content Include="svg\home_solid.svg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
